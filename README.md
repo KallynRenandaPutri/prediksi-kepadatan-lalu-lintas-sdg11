@@ -4,19 +4,24 @@ Project AI untuk mengklasifikasikan tingkat kepadatan lalu lintas menggunakan al
 
 ## Deskripsi Project
 
-Project ini merupakan penerapan kecerdasan buatan (Artificial Intelligence) menggunakan algoritma Decision Tree Classifier untuk mengklasifikasikan tingkat kepadatan lalu lintas menjadi Rendah, Sedang, dan Tinggi.
+Project ini merupakan penerapan kecerdasan buatan (Artificial Intelligence) menggunakan algoritma **Decision Tree Classifier** untuk mengklasifikasikan tingkat kepadatan lalu lintas menjadi Rendah, Sedang, dan Tinggi.
 
-Project ini berkaitan dengan Sustainable Development Goal (SDG) 11: Sustainable Cities and Communities, khususnya dalam pemanfaatan teknologi untuk membantu memahami kondisi transportasi perkotaan.
+Project ini berkaitan dengan** Sustainable Development Goal (SDG) 11: Sustainable Cities and Communities**, khususnya dalam pemanfaatan teknologi untuk membantu memahami kondisi transportasi perkotaan.
 
 ## Latar Belakang
 
-Kepadatan lalu lintas merupakan salah satu permasalahan yang sering terjadi di wilayah perkotaan. Kondisi lalu lintas dapat dipengaruhi oleh beberapa faktor seperti waktu, hari, suhu, dan kondisi cuaca. Oleh karena itu, digunakan Machine Learning untuk mengklasifikasikan tingkat kepadatan lalu lintas menjadi tiga kategori, yaitu Rendah, Sedang, dan Tinggi.
+Kepadatan lalu lintas merupakan salah satu permasalahan yang sering terjadi di wilayah perkotaan. Kondisi lalu lintas dapat dipengaruhi oleh beberapa faktor seperti waktu, hari, suhu, dan kondisi cuaca. Oleh karena itu, digunakan Machine Learning untuk mengklasifikasikan tingkat kepadatan lalu lintas menjadi tiga kategori, yaitu:
+- Rendah
+- Sedang
+- Tinggi 
 
-## Anggota Kelompok
+## Anggota Kelompok (Kelompok 11)
 
-- Muhammad Fajar M — F1G125040
-- Kallyn Renanda Putri — F1G125035
-- Sindi Aulia — F1G125077
+| No. | Nama | NIM |
+|---|---|---|
+| 1 | Muhammad Fajar M | F1G125040 |
+| 2 | Kallyn Renanda Putri | F1G125035 |
+| 3 | Sindi Aulia | F1G125077 |
 
 ## Problem
 
@@ -29,13 +34,15 @@ Kepadatan lalu lintas merupakan salah satu permasalahan yang sering terjadi di w
 1. Melakukan data cleaning.
 2. Melakukan preprocessing dan transformasi data.
 3. Membuat kategori tingkat kepadatan lalu lintas.
-4. Membangun model Decision Tree Classifier.
+4. Membangun model menggunakan Decision Tree Classifier.
 5. Mengevaluasi performa model.
 6. Melakukan prediksi terhadap data baru.
 
 ## Dataset
 
-Dataset yang digunakan adalah **Metro Interstate Traffic Volume** dari UCI Machine Learning Repository.
+Dataset yang digunakan adalah **Metro Interstate Traffic Volume**
+Sumber: UCI Machine Learning Repository. 
+https://doi.org/10.24432/C5X60B.
 
 Dataset awal memiliki **48.204 data**.
 
@@ -55,16 +62,16 @@ Dataset berisi data volume lalu lintas per jam beserta beberapa informasi penduk
 
 ## Preprocessing Data
 
-Tahapan preprocessing yang dilakukan:
+Tahapan preprocessing data yang dilakukan:
 
-1. Memasukkan dataset.
-2. Memeriksa struktur data.
+1. Memasukkan dataset CSV.
+2. Memeriksa struktur dan kondisi awal data.
 3. Menghapus data duplikat.
-4. Menangani missing value.
-5. Mengubah data tanggal dan waktu.
-6. Membuat fitur waktu.
+4. Menangani nilai kosong.
+5. Mengubah format tanggal dan waktu.
+6. Membuat fitur waktu seperti jam, hari, bulan, tahun, dan hari dalam minggu.
 7. Mengubah suhu menjadi Celsius.
-8. Melakukan encoding pada kondisi cuaca.
+8. Melakukan encoding pada kondisi cuaca
 
 Setelah proses cleaning, diperoleh **48.187 data**.
 
@@ -75,6 +82,8 @@ Volume lalu lintas diklasifikasikan menjadi tiga kategori menggunakan metode qua
 - Rendah
 - Sedang
 - Tinggi
+  
+Kategori tersebut digunakan sebagai target atau label yang akan diprediksi oleh model.
 
 ## Pembagian Data
 
@@ -83,17 +92,23 @@ Data dibagi menjadi:
 - **80% data training:** 38.549 data
 - **20% data testing:** 9.638 data
 
-Pembagian data menggunakan `train_test_split` dengan stratifikasi.
+Pembagian data menggunakan `train_test_split` dengan stratifikasi agar proporsi setiap kategori tetap terjaga.
 
 ## Algoritma
 
 ### Decision Tree Classifier
 
-Decision Tree Classifier digunakan untuk melakukan klasifikasi tingkat kepadatan lalu lintas berdasarkan fitur-fitur yang tersedia.
+Decision Tree merupakan algoritma Machine Learning yang menggunakan struktur pohon untuk mengambil keputusan berdasarkan fitur yang tersedia.
 
-## Hasil Pengujian
+Dalam project ini, Decision Tree digunakan untuk menentukan apakah kondisi lalu lintas termasuk Rendah, Sedang, atau Tinggi.
 
-Model Decision Tree Classifier memperoleh **accuracy sebesar 91,18%** pada data testing.
+## Hasil pengujian model:
+
+| Model | Accuracy |
+|---|---|
+| Decision Tree Classifier | 91,18% |
+
+Model berhasil memperoleh akurasi sebesar 91,18% pada data testing.
 
 ### Classification Report
 
@@ -103,11 +118,23 @@ Model Decision Tree Classifier memperoleh **accuracy sebesar 91,18%** pada data 
 | Sedang | 0,87 | 0,87 | 0,87 |
 | Tinggi | 0,92 | 0,92 | 0,92 |
 
+Hasil tersebut menunjukkan bahwa model dapat melakukan klasifikasi dengan performa yang cukup baik pada ketiga kategori.
+
 ## Feature Importance
 
-Fitur yang paling berpengaruh terhadap hasil klasifikasi adalah **Hour** dengan nilai importance sebesar **0,630248**.
+Fitur yang paling berpengaruh terhadap hasil klasifikasi adalah:
+
+1. Hour → 0,630248
+2. Day of Week → 0,147220
+3. Temp C → 0,071312
+4. Day → 0,050348
+5. Month → 0,037515
+
+Fitur **hour** menjadi fitur yang paling dominan dalam menentukan klasifikasi tingkat kepadatan lalu lintas.
 
 ## Prediksi Data Baru
+
+Model juga diuji menggunakan data baru dengan kondisi tertentu.
 
 Contoh data baru:
 
@@ -118,19 +145,26 @@ Contoh data baru:
 - Tutupan awan: 40%
 - Kondisi cuaca: Clear
 
-**Hasil prediksi: Tinggi**
+Hasil prediksi: 
+Tingkat kepadatan lalu lintas → **Tinggi**
 
 ## Hubungan dengan SDG 11
 
-Project ini berkaitan dengan SDG 11 karena memanfaatkan teknologi Machine Learning untuk membantu memahami pola kepadatan lalu lintas di wilayah perkotaan.
+Project ini berkaitan dengan **SDG 11 – Sustainable Cities and Communities**  karena membahas permasalahan transportasi di kawasan perkotaan.
 
-Hasil klasifikasi dapat menjadi informasi untuk memahami kondisi transportasi dan mendukung pengembangan kota yang lebih berkelanjutan.
+Pemanfaatan Machine Learning dapat menjadi contoh penggunaan teknologi berbasis data untuk memahami pola kepadatan lalu lintas dan mendukung pengelolaan transportasi yang lebih efektif.
+
+Project ini merupakan project pembelajaran, sehingga hasil prediksi belum digunakan sebagai sistem pengaturan lalu lintas secara langsung.
 
 ## Kesimpulan
 
-Algoritma Decision Tree Classifier berhasil mengklasifikasikan tingkat kepadatan lalu lintas menjadi Rendah, Sedang, dan Tinggi dengan accuracy sebesar **91,18%**.
+Project ini berhasil menerapkan **Decision Tree Classifier** untuk mengklasifikasikan tingkat kepadatan lalu lintas menjadi tiga kategori, yaitu Rendah, Sedang, dan Tinggi.
 
-Fitur **Hour** menjadi fitur yang paling berpengaruh dalam proses klasifikasi. Project ini menunjukkan bahwa Machine Learning dapat digunakan untuk membantu memahami pola kepadatan lalu lintas dan mendukung SDG 11.
+Model memperoleh akurasi sebesar **91,18%** pada data testing. Fitur yang paling berpengaruh adalah jam (hour) dengan nilai feature importance sebesar **0,630248**.
+
+Hasil project menunjukkan bahwa Machine Learning dapat digunakan untuk membantu memahami pola kepadatan lalu lintas berdasarkan data waktu dan kondisi cuaca.
+
+Project ini juga mendukung **pembahasan SDG 11** melalui pemanfaatan teknologi untuk permasalahan transportasi perkotaan.
 
 ## Teknologi yang Digunakan
 
@@ -144,6 +178,15 @@ Fitur **Hour** menjadi fitur yang paling berpengaruh dalam proses klasifikasi. P
 
 ## File Project
 
-- `Tingkat__Kepadatan__Lalu__Lintas.ipynb`
+- `Tingkat__Kepadatan__Lalu__Lintas.ipynb` merupakan notebook yang berisi proses:
 
-Notebook berisi proses data cleaning, preprocessing, feature engineering, klasifikasi, evaluasi model, feature importance, dan prediksi data baru.
+* Pengumpulan data
+* Data cleaning
+* Preprocessing
+* Feature engineering
+* Pembuatan kategori
+* Training model
+* Evaluasi model
+* Feature importance
+* Prediksi data baru
+* Kesimpulan
