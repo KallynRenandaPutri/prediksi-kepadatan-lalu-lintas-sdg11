@@ -6,7 +6,7 @@ Project AI untuk mengklasifikasikan tingkat kepadatan lalu lintas menggunakan al
 
 Project ini merupakan penerapan kecerdasan buatan (Artificial Intelligence) menggunakan algoritma **Decision Tree Classifier** untuk mengklasifikasikan tingkat kepadatan lalu lintas.
 
-Project ini berkaitan dengan** Sustainable Development Goal (SDG) 11: **Sustainable Cities and Communities**, khususnya dalam pemanfaatan teknologi untuk membantu memahami kondisi transportasi perkotaan.
+Project ini berkaitan dengan **Sustainable Development Goal (SDG) 11: Sustainable Cities and Communities**, khususnya dalam pemanfaatan teknologi untuk membantu memahami kondisi transportasi perkotaan.
 
 ## Latar Belakang
 
