@@ -4,9 +4,9 @@ Project AI untuk mengklasifikasikan tingkat kepadatan lalu lintas menggunakan al
 
 ## Deskripsi Project
 
-Project ini merupakan penerapan kecerdasan buatan (Artificial Intelligence) menggunakan algoritma **Decision Tree Classifier** untuk mengklasifikasikan tingkat kepadatan lalu lintas menjadi Rendah, Sedang, dan Tinggi.
+Project ini merupakan penerapan kecerdasan buatan (Artificial Intelligence) menggunakan algoritma **Decision Tree Classifier** untuk mengklasifikasikan tingkat kepadatan lalu lintas.
 
-Project ini berkaitan dengan** Sustainable Development Goal (SDG) 11: Sustainable Cities and Communities**, khususnya dalam pemanfaatan teknologi untuk membantu memahami kondisi transportasi perkotaan.
+Project ini berkaitan dengan** Sustainable Development Goal (SDG) 11: **Sustainable Cities and Communities**, khususnya dalam pemanfaatan teknologi untuk membantu memahami kondisi transportasi perkotaan.
 
 ## Latar Belakang
 
@@ -27,11 +27,11 @@ Kepadatan lalu lintas merupakan salah satu permasalahan yang sering terjadi di w
 
 1. Bagaimana mengklasifikasikan tingkat kepadatan lalu lintas menjadi Rendah, Sedang, dan Tinggi?
 2. Bagaimana menerapkan algoritma Decision Tree Classifier?
-3. Seberapa baik performa model dalam melakukan klasifikasi?
+3. Seberapa baik performa model dalam mengklasifikasikan tingkat kepadatan lalu lintas?
 
 ## Tujuan
 
-1. Melakukan data cleaning.
+1. Mengolah dan membersihkan data lalu lintas.
 2. Melakukan preprocessing dan transformasi data.
 3. Membuat kategori tingkat kepadatan lalu lintas.
 4. Membangun model menggunakan Decision Tree Classifier.
